@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+      .status {
+        color: darkblue  ;
+      }
+      .invalid {
+        border-color: red;
+      }
+      .msg_self {
+        color:blue;
+      }
+      .msg_server {
+        color: rgb(192, 110, 10)
+      }
+      .msg_private {
+        color:red;
+      }
+      #connectAs {
+        border: solid darkgrey 1px;
+        background-color: rgb(202, 230, 230);
+        padding:5px 5px 10px 10px;
+      }
+      #messages {
+        border: solid darkgrey 1px;
+        background-color: rgb(238, 247, 247);
+        padding:5px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+  </style>
+</head>
+<body>
+  <h2>Welcome to Jack's Chat Server</h2>
+  <div id='connectAs'>
+    Connect as:
+    <div>
+      <input type='text' placeholder='Enter your user name' id='userName' size=15>
+      <input type='button' id="btnConnect" value='Connect'>
+    </div>
+    <span id='status' class='status'></span>
+  </div>
+
+  <div id='messages'></div>
+  <div>
+    <input type='text' placeholder='Send a message' id='msgBox' size=30 disabled=true>
+    <input type='button' id="btnSend" value='Send' disabled=true>
+    <input type='button' id="btnClear" value='Clear' disabled=true>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src='chatClient.js'></script>
+  <script src='eventListeners.js'></script>
+  <script src='eventHandlers.js'></script>
+
+</body>
+</html>
